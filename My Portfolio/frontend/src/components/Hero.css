@@ -1,4 +1,3 @@
-/* Hero.css */
 .hero {
   display: flex;
   align-items: center;
@@ -90,13 +89,23 @@
 
 /* Animations */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px) }
-  to { opacity: 1; transform: translateY(0) }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-text {
@@ -155,17 +164,17 @@
   .hero h1 {
     font-size: 32px;
   }
-  
+
   .hero p {
     font-size: 16px;
     line-height: 28px;
   }
-  
+
   .hero-action {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .hero-connect,
   .hero-resume {
     width: 100%;

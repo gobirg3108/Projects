@@ -1,3 +1,4 @@
+/* Certificate.css */
 .certificate {
   display: flex;
   flex-direction: column;
@@ -77,6 +78,7 @@
   transform: scale(1.02);
   background-color: #202020;
 }
+
 .certificate-img-wrapper {
   position: relative;
   cursor: pointer;
@@ -224,6 +226,12 @@
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+  .certificate {
+    margin: 80px 50px;
+  }
+}
+
 @media (max-width: 768px) {
   .certificate {
     gap: 50px;

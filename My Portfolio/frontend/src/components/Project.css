@@ -1,3 +1,4 @@
+/* Project.css */
 .project {
   display: flex;
   flex-direction: column;
@@ -135,7 +136,14 @@
 .project-showmore:hover .arrow-icon {
   transform: translateX(5px);
 }
+
 /* Responsive */
+@media (max-width: 1200px) {
+  .project {
+    margin: 80px 50px;
+  }
+}
+
 @media (max-width: 768px) {
   .project {
     gap: 50px;
@@ -172,5 +180,19 @@
 
   .project-card p {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project {
+    margin: 50px 20px;
+  }
+
+  .project-title h1 {
+    font-size: 40px;
+  }
+
+  .project-container {
+    gap: 30px;
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -18,7 +18,7 @@ const Footer = () => {
 
         <div className="footer-top-right">
           <a
-            href="https://github.com/gobirg3108/"
+            href="https://github.com/gobirg3108/Projects"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-social fade-in delay-1"

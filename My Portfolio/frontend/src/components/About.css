@@ -1,3 +1,4 @@
+/* About.css */
 .about {
   display: flex;
   flex-direction: column;
@@ -99,16 +100,17 @@
   }
 }
 
-/* Express icon fix */
-.express-icon {
-  background-color: black;
-  color: white;
-  padding: 5px;
-  border-radius: 6px;
-  font-size: 24px;
+/* Responsive */
+@media (max-width: 1200px) {
+  .about {
+    margin: 80px 50px;
+  }
+
+  .about-section {
+    gap: 50px;
+  }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .about {
     gap: 60px;
@@ -154,5 +156,19 @@
 
   .about-skill hr {
     height: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-title h1 {
+    font-size: 40px;
+  }
+
+  .about-para {
+    font-size: 16px;
+  }
+
+  .about-skill p {
+    min-width: 120px;
   }
 }
