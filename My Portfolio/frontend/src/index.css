@@ -1,0 +1,59 @@
+/* index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #161513;
+  color: white;
+  font-family: "Outfit", sans-serif;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Accessibility */
+[role="button"],
+button,
+a {
+  cursor: pointer;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#df8908, #b415ff);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#b415ff, #df8908);
+}
+
+/* Selection */
+::selection {
+  background: #b415ff;
+  color: white;
+}
+
+/* Responsive base font size */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
