@@ -16,7 +16,7 @@ import UserForm from "./UserForm";
 import { useSnackbar } from "notistack";
 import { motion } from "framer-motion";
 
-const API_URL = "http://localhost:3000/api";
+const API_URL = "https://user-management-w18l.onrender.com/api";
 
 function UserList() {
   const [users, setUsers] = useState([]);

@@ -23,7 +23,7 @@ function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "https://user-management-w18l.onrender.com/api/auth/register",
         { name, email, password }
       );
       localStorage.setItem("token", response.data.token);
