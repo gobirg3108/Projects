@@ -8,7 +8,7 @@ import project6_img from "../assets/project_6.svg";
 const mywork_data = [
   {
     w_no: 1,
-    w_name: "Netflix Clone",
+    w_name: "Resume Maker",
     w_img: project1_img,
     w_desc:
       "React + Firebase based OTT Clone with user authentication and movie database",
@@ -16,17 +16,17 @@ const mywork_data = [
   },
   {
     w_no: 2,
-    w_name: "Portfolio Site",
+    w_name: "CRM",
     w_img: project2_img,
     w_desc: "Personal Portfolio website built with React and CSS animations",
     w_link: "https://gobinath-portfolio.netlify.app",
   },
   {
     w_no: 3,
-    w_name: "Weather App",
+    w_name: "User Management",
     w_img: project3_img,
     w_desc:
-      "Weather forecast application using OpenWeather API with 5-day forecast",
+      "A full-stack application with secure authentication and CRUD operations for managing users. Features a modern UI with responsive design, animations, and protected routes.",
     w_link: "https://weather-app-gobi.netlify.app",
   },
   {
