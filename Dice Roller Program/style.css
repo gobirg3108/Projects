@@ -1,37 +1,140 @@
-#container {
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --primary-color: #6366f1;
+  --primary-hover: #4f46e5;
+  --background: #f8fafc;
+  --text-color: #1e293b;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 500px;
   text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
 }
 
-button {
-  font-size: 1.5rem;
-  padding: 10px 15px;
-  border-radius: 10px;
-  border: none;
-  background-color: rgb(47, 179, 255);
-  color: rgb(246, 246, 246);
-  font-weight: bold;
-  cursor: pointer;
+h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 
-button:hover {
-  background-color: rgb(115, 196, 240);
+.input-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-color);
 }
 
 input {
-  font-size: 2rem;
-  width: 150px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  width: 80px;
   text-align: center;
-  font-weight: bold;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
 }
 
-#diceResult {
-  margin: 25px;
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
 }
 
-#diceImages img {
-  width: 150px;
-  margin: 5px;
+button {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.result-container {
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.total-result {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.dice-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.dice-images img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.dice-images img:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .dice-images img {
+    width: 60px;
+    height: 60px;
+  }
 }

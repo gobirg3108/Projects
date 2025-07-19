@@ -3,20 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dice Roller Program</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Modern Dice Roller</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-
-    <div id="container">
+    <div class="container">
       <h1>Dice Roller</h1>
-      <label># of Dice</label>
-      <input type="number" id="numOfDice" value="1" min="1" />
+      <div class="input-group">
+        <label for="numOfDice">Number of Dice</label>
+        <input type="number" id="numOfDice" value="1" min="1" max="10" />
+      </div>
       <button onclick="rollDice()">Roll Dice</button>
-      <div id="diceResult"></div>
-      <div id="diceImages"></div>
+      <div id="totalResult" class="total-result"></div>
+      <div id="diceResult" class="result-container"></div>
+      <div id="diceImages" class="dice-images"></div>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

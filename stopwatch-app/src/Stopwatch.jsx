@@ -70,6 +70,7 @@ function Stopwatch() {
   return (
     <div className="stopwatch-container">
       <div className="stopwatch-card">
+        <h1>StopWatch</h1>
         <div className="display">{formatTime()}</div>
 
         <div className="controls">
