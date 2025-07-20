@@ -1,0 +1,44 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+.homeContainer {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.homePaper {
+  padding: 2rem;
+  background: linear-gradient(45deg, #3f51b5, #2196f3);
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+.welcomeText {
+  font-family: 'Roboto Slab', serif;
+}
+
+.homeSubtitle {
+  margin-top: 1rem;
+}
+
+.homeButtons {
+  margin-top: 2rem;
+}
+
+.homeButtons .MuiButton-root {
+  margin: 0 1rem;
+}
+
+.homeContent {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.homeContent h5 {
+  color: #3f51b5;
+}
+
+.homeContent p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}

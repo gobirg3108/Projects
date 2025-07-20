@@ -1,0 +1,35 @@
+.follow-up-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    padding: 2rem;
+  }
+  
+  .follow-up-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    max-width: 500px;
+    margin: auto;
+  }
+  
+  .follow-up-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .follow-up-textfield {
+    margin-bottom: 1rem;
+  }
+  
+  .follow-up-button {
+    margin-top: 1.5rem;
+  }
+  
+  .MuiAlert-root {
+    font-size: 0.875rem;
+  }
+  

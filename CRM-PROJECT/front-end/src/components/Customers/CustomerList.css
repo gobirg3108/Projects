@@ -1,0 +1,26 @@
+.customer-list-container {
+  margin-top: 20px;
+}
+
+.customer-list-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.customer-list-table th,
+.customer-list-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.customer-list-table th {
+  background-color: #f4f4f4;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
