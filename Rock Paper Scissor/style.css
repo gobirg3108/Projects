@@ -1,48 +1,215 @@
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #ff9f1c;
+  --accent-color: #ff6b6b;
+  --dark-color: #2b2d42;
+  --light-color: #f8f9fa;
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --border-radius: 15px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:bold ;
-    margin: 0;
-    display: flex;
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: var(--dark-color);
+}
+
+.game-container {
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem;
+}
+
+.game-header {
+  margin-bottom: 2rem;
+}
+
+.game-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-subtitle {
+  color: var(--secondary-color);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.choice-btn {
+  font-size: 4rem;
+  min-width: 150px;
+  padding: 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.choice-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.choice-btn:active {
+  transform: translateY(0);
+}
+
+.emoji {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.game-info {
+  margin: 2rem 0;
+}
+
+.choice-display {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.choice-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: var(--light-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.result-display {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  min-height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.score-display {
+  font-size: 1.5rem;
+  background-color: var(--light-color);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.score-label {
+  color: var(--dark-color);
+  margin-right: 0.5rem;
+}
+
+.score-value {
+  font-weight: bold;
+}
+
+.greenText {
+  color: var(--success-color);
+  text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+}
+
+.redText {
+  color: var(--danger-color);
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.3);
+}
+
+.reset-btn {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.reset-btn:hover {
+  background-color: #ff5252;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.winner-animation {
+  animation: bounce 0.5s ease infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .choices {
     flex-direction: column;
     align-items: center;
-}
-h1 {
-    font-size: 3rem;
-    color:darkgoldenrod;
-}
-.choices {
-    margin-bottom: 30px;
-}
-.choices button {
-    font-size: 7rem;
-    min-width: 150px;
-    margin: 0 10px;
-    border-radius: 250px;
-    background-color:hsl(33, 19%, 72%);
-    cursor: pointer;
-    transition: background-color 0.5s ease;
-}
+  }
 
-.choices button:hover {
-    background-color:hsl(33, 19%, 90%); ;
-}
+  .choice-btn {
+    width: 100%;
+    max-width: 200px;
+  }
 
-#playerDisplay, #computerDisplay {
-    font-size: 2.5rem;
-}
+  .score-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-#resultDisplay {
-    font-size: 5rem;
-    margin: 30px;
-}
-.scoreDisplay {
-    font-size: 3rem;
-}
-
-.greenText, #playerScoreDisplay {
-    color: green;
-}
-
-.redText, #computerScoreDisplay {
-    color: red;
+  .game-header h1 {
+    font-size: 2rem;
+  }
 }

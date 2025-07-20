@@ -3,27 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rock,Paper&Scissors</title>
+    <title>Rock, Paper & Scissors</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <h1>Rock - Paper - Scissors</h1>
-    <div class="choices">
-      <button onclick="playGame('rock')">👊</button>
-      <button onclick="playGame('paper')">✋</button>
-      <button onclick="playGame('scissors')">✌️</button>
-    </div>
-    <div id="playerDisplay">Player:</div>
-    <div id="computerDisplay">Computer:</div>
-    <div id="resultDisplay"></div>
+    <div class="game-container">
+      <header class="game-header">
+        <h1>Rock Paper Scissors</h1>
+        <p class="game-subtitle">First to score 5 wins the game!</p>
+      </header>
 
-    <div class="scoreDisplay">
-      Player Score: <span id="playerScoreDisplay">0</span>
-    </div>
+      <div class="choices">
+        <button class="choice-btn" onclick="playGame('rock')">
+          <span class="emoji">👊</span>
+          <span class="label">Rock</span>
+        </button>
+        <button class="choice-btn" onclick="playGame('paper')">
+          <span class="emoji">✋</span>
+          <span class="label">Paper</span>
+        </button>
+        <button class="choice-btn" onclick="playGame('scissors')">
+          <span class="emoji">✌️</span>
+          <span class="label">Scissors</span>
+        </button>
+      </div>
 
-    <div class="scoreDisplay">
-      Computer Score: <span id="computerScoreDisplay">0</span>
+      <div class="game-info">
+        <div class="choice-display">
+          <div id="playerDisplay" class="choice-text">Player:</div>
+          <div id="computerDisplay" class="choice-text">Computer:</div>
+        </div>
+
+        <div id="resultDisplay" class="result-display"></div>
+
+        <div class="score-container">
+          <div class="score-display">
+            <span class="score-label">Player Score:</span>
+            <span id="playerScoreDisplay" class="score-value">0</span>
+          </div>
+          <div class="score-display">
+            <span class="score-label">Computer Score:</span>
+            <span id="computerScoreDisplay" class="score-value">0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-footer">
+        <button id="resetBtn" class="reset-btn">Reset Game</button>
+      </div>
     </div>
   </body>
 </html>
