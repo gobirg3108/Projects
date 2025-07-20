@@ -1,5 +1,5 @@
 import project1 from "./My_Work_Img/Resume_Maker.png";
-import project2 from "./My_Work_Img/Calculator.png";
+import project2 from "./My_Work_Img/CRM.png";
 import project3 from "./My_Work_Img/User-Management.png";
 import project4 from "./My_Work_Img/Digital-Clock.png";
 import project5 from "./My_Work_Img/Todo_App.png";
@@ -24,8 +24,9 @@ const mywork_data = [
     w_no: 2,
     w_name: "CRM (Customer Relationship Management ",
     w_img: project2,
-    w_desc: "Personal Portfolio website built with React and CSS animations",
-    w_link: "https://gobinath-portfolio.netlify.app",
+    w_desc:
+      "A full-stack customer management platform with user authentication, customer tracking, follow-ups, and analytics. Built with React, Node.js, and Material-UI.",
+    w_link: "https://magical-gumdrop-c164e2.netlify.app/",
   },
   {
     w_no: 3,
