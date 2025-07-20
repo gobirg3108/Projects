@@ -32,25 +32,67 @@ const mywork_data = [
   },
   {
     w_no: 4,
-    w_name: "Todo App",
+    w_name: "Digital Clock",
     w_img: project4_img,
     w_desc: "Task management application with localStorage persistence",
     w_link: "https://todo-app-gobi.netlify.app",
   },
+
   {
     w_no: 5,
-    w_name: "Blog CMS",
+    w_name: "To Do App",
+    w_img: project6_img,
+    w_desc:
+      "E-commerce platform with shopping cart and Stripe payment integration",
+    w_link: "https://shop-ecom-gobi.netlify.app",
+  },
+
+  {
+    w_no: 6,
+    w_name: "Stopwatch",
+    w_img: project6_img,
+    w_desc:
+      "E-commerce platform with shopping cart and Stripe payment integration",
+    w_link: "https://shop-ecom-gobi.netlify.app",
+  },
+
+  {
+    w_no: 7,
+    w_name: "Rock Paper Scissor",
+    w_img: project6_img,
+    w_desc:
+      "E-commerce platform with shopping cart and Stripe payment integration",
+    w_link: "https://shop-ecom-gobi.netlify.app",
+  },
+  {
+    w_no: 8,
+    w_name: "Dice Roller",
     w_img: project5_img,
     w_desc: "Fullstack Blog Content Management System with Node & MongoDB",
     w_link: "https://blog-cms-gobi.netlify.app",
   },
   {
-    w_no: 6,
-    w_name: "E-Commerce",
+    w_no: 9,
+    w_name: "Color Picker",
     w_img: project6_img,
     w_desc:
       "E-commerce platform with shopping cart and Stripe payment integration",
     w_link: "https://shop-ecom-gobi.netlify.app",
+  },
+  {
+    w_no: 10,
+    w_name: "Image  Slider",
+    w_img: project6_img,
+    w_desc:
+      "E-commerce platform with shopping cart and Stripe payment integration",
+    w_link: "https://shop-ecom-gobi.netlify.app",
+  },
+  {
+    w_no: 11,
+    w_name: "GTG Perfumes",
+    w_img: project5_img,
+    w_desc: "Fullstack Blog Content Management System with Node & MongoDB",
+    w_link: "https://blog-cms-gobi.netlify.app",
   },
 ];
 

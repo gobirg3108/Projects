@@ -585,69 +585,81 @@ const EditResume = () => {
     try {
       setIsLoading(true);
 
-      const thumbnailElement = thumbnailRef.current;
-      if (!thumbnailElement) {
-        throw new Error("Thumbnail element not found");
-      }
+      // Create a temporary container for the thumbnail
+      const tempContainer = document.createElement("div");
+      tempContainer.style.position = "absolute";
+      tempContainer.style.left = "-9999px";
+      document.body.appendChild(tempContainer);
 
-      const fixedThumbnail = fixTailwindColors(thumbnailElement);
+      // Clone the resume preview
+      const thumbnailElement = thumbnailRef.current.cloneNode(true);
+      tempContainer.appendChild(thumbnailElement);
 
-      const thumbnailCanvas = await html2canvas(fixedThumbnail, {
-        scale: 0.5,
-        backgroundColor: "#FFFFFF",
-        logging: false,
-      });
-
-      document.body.removeChild(fixedThumbnail);
-
-      const thumbnailDataUrl = thumbnailCanvas.toDataURL("image/png");
-      const thumbnailFile = dataURLtoFile(
-        thumbnailDataUrl,
-        `thumbnail-${resumeId}.png`
-      );
-
-      const formData = new FormData();
-      formData.append("thumbnail", thumbnailFile);
-
-      const uploadResponse = await axiosInstance.put(
-        API_PATHS.RESUME.UPLOAD_IMAGES(resumeId),
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
+      // Create style override for html2canvas
+      const override = document.createElement("style");
+      override.id = "__html2canvas_override__";
+      override.textContent = `
+        * {
+          color: #000 !important;
+          background-color: #fff !important;
+          border-color: #000 !important;
+          box-shadow: none !important;
         }
-      );
+      `;
+      document.head.appendChild(override);
 
-      const { thumbnailLink } = uploadResponse.data;
+      try {
+        // Generate thumbnail
+        const thumbnailCanvas = await html2canvas(thumbnailElement, {
+          scale: 0.5,
+          backgroundColor: "#FFFFFF",
+          logging: false,
+        });
 
-      await updateResumeDetails(thumbnailLink);
+        const thumbnailDataUrl = thumbnailCanvas.toDataURL("image/png");
+        const thumbnailFile = dataURLtoFile(
+          thumbnailDataUrl,
+          `thumbnail-${resumeId}.png`
+        );
 
-      toast.success("Resume Updated Successfully");
-      navigate("/dashboard");
+        const formData = new FormData();
+        formData.append("thumbnail", thumbnailFile);
+
+        // Upload the thumbnail
+        const uploadResponse = await axiosInstance.put(
+          API_PATHS.RESUME.UPLOAD_IMAGES(resumeId),
+          formData,
+          { headers: { "Content-Type": "multipart/form-data" } }
+        );
+
+        // Update resume with new thumbnail link
+        await updateResumeDetails(uploadResponse.data?.thumbnailLink || "");
+
+        toast.success("Resume Updated Successfully");
+        navigate("/dashboard");
+      } finally {
+        // Clean up
+        document.head.removeChild(override);
+        document.body.removeChild(tempContainer);
+      }
     } catch (error) {
       console.error("Error Uploading Images:", error);
-      toast.error("Failed to upload images");
+      toast.error(error.response?.data?.message || "Failed to upload images");
     } finally {
       setIsLoading(false);
     }
   };
 
-  // This function handles updating the resume.
-  // The PUT method is used to update the data on the backend.
-
-  const updateResumeDetails = async (thumbnailLink) => {
+  const updateResumeDetails = async (thumbnailLink = "") => {
     try {
-      setIsLoading(true);
-
       await axiosInstance.put(API_PATHS.RESUME.UPDATE(resumeId), {
         ...resumeData,
-        thumbnailLink: thumbnailLink || "",
+        thumbnailLink,
         completion: completionPercentage,
       });
-    } catch (err) {
-      console.error("Error updating resume:", err);
-      toast.error("Failed to update resume details");
-    } finally {
-      setIsLoading(false);
+    } catch (error) {
+      console.error("Error updating resume:", error);
+      throw error;
     }
   };
 
