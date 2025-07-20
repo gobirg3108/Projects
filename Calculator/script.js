@@ -14,7 +14,6 @@ function backspace() {
 
 function calculate() {
   try {
-    // Replace × and ÷ with * and / for eval
     let expression = display.value.replace(/×/g, "*").replace(/÷/g, "/");
     display.value = eval(expression);
   } catch (error) {

@@ -4,6 +4,7 @@ import project3_img from "../assets/project_3.svg";
 import project4_img from "../assets/project_4.svg";
 import project5_img from "../assets/project_5.svg";
 import project6_img from "../assets/project_6.svg";
+import user_management_img from "./User-Management.png";
 
 const mywork_data = [
   {
@@ -24,10 +25,10 @@ const mywork_data = [
   {
     w_no: 3,
     w_name: "User Management",
-    w_img: project3_img,
+    w_img: user_management_img,
     w_desc:
       "A full-stack application with secure authentication and CRUD operations for managing users. Features a modern UI with responsive design, animations, and protected routes.",
-    w_link: "https://weather-app-gobi.netlify.app",
+    w_link: "https://resilient-frangipane-a5f107.netlify.app/",
   },
   {
     w_no: 4,

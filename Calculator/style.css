@@ -1,103 +1,130 @@
 body {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  padding-top: 80px;
 }
 
+#app-title {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
 #calculator {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: hsl(0, 0%, 15%);
-    border-radius: 20px;
-    max-width: 100%;
-    width: 350px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 20px;
+  max-width: 100%;
+  width: 350px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 #display {
-    width: 100%;
-    padding: 20px;
-    font-size: 3rem;
-    text-align: right;
-    border: none;
-    background-color: hsl(0, 0%, 25%);
-    color: white;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  font-size: 3rem;
+  text-align: right;
+  border: none;
+  background-color: hsl(0, 0%, 25%);
+  color: white;
+  box-sizing: border-box;
 }
 
 #keys {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
 }
 
 button {
-    width: 100%;
-    height: 70px;
-    border-radius: 15px;
-    border: none;
-    background-color: hsl(0, 0%, 30%);
-    color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 70px;
+  border-radius: 15px;
+  border: none;
+  background-color: hsl(0, 0%, 30%);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: hsl(0, 0%, 40%);
-    transform: translateY(-2px);
+  background-color: hsl(0, 0%, 40%);
+  transform: translateY(-2px);
 }
 
 button:active {
-    background-color: hsl(0, 0%, 50%);
-    transform: translateY(0);
+  background-color: hsl(0, 0%, 50%);
+  transform: translateY(0);
 }
 
 .operator-btn {
-    background-color: hsl(35, 100%, 55%);
+  background-color: hsl(35, 100%, 55%);
 }
 
 .operator-btn:hover {
-    background-color: hsl(35, 100%, 45%);
+  background-color: hsl(35, 100%, 45%);
 }
 
 .equal-btn {
-    background-color: hsl(120, 100%, 35%);
+  background-color: hsl(120, 100%, 35%);
 }
 
 .equal-btn:hover {
-    background-color: hsl(120, 100%, 30%);
+  background-color: hsl(120, 100%, 30%);
 }
 
 .clear-btn {
-    background-color: hsl(0, 100%, 50%);
+  background-color: hsl(0, 100%, 50%);
 }
 
 .clear-btn:hover {
-    background-color: hsl(0, 100%, 40%);
+  background-color: hsl(0, 100%, 40%);
 }
 
-/* Responsive adjustments */
 @media (max-width: 400px) {
-    #calculator {
-        width: 90%;
-        border-radius: 15px;
-    }
-    
-    #display {
-        font-size: 2.5rem;
-        padding: 15px;
-    }
-    
-    button {
-        height: 60px;
-        font-size: 1.5rem;
-        border-radius: 10px;
-    }
+  body {
+    padding-top: 60px;
+  }
+
+  #app-title {
+    font-size: 2rem;
+    top: 10px;
+  }
+
+  #calculator {
+    width: 90%;
+    border-radius: 15px;
+  }
+
+  #display {
+    font-size: 2.5rem;
+    padding: 15px;
+  }
+
+  button {
+    height: 60px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+  }
 }
