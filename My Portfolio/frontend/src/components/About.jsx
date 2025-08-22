@@ -1,7 +1,7 @@
 import React from "react";
 import "./About.css";
 import theme_pattern from "../assets/theme_pattern.svg";
-import profile_img from "../assets/about_profile.svg";
+import profile_img from '../assets/profile-img.png'
 import { FaHtml5, FaCss3Alt, FaReact, FaNodeJs } from "react-icons/fa";
 import {
   SiJavascript,
@@ -21,7 +21,7 @@ const skills = [
   { name: "Material UI", icon: <SiMui color="#007fff" /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss color="#38bdf8" /> },
   { name: "Node JS", icon: <FaNodeJs color="#68a063" /> },
- { name: "Express JS", icon: <SiExpress color="#ffffff" /> },
+  { name: "Express JS", icon: <SiExpress color="#ffffff" /> },
   { name: "MongoDB", icon: <SiMongodb color="#4db33d" /> },
 ];
 
